@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hacer una consulta | GestoríaUno</title>
+  <meta name="description" content="Envíenos su consulta y le respondemos a la brevedad.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo: las generales y las del formulario -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="consulta.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO / NAVEGACIÓN ============ -->
+  <!-- Los enlaces apuntan a index.html porque las secciones están en la página principal -->
+  <header class="encabezado" id="inicio-encabezado">
+    <div class="contenedor encabezado__interior">
+      <a class="logotipo" href="index.html">Gestoría <span class="logotipo__acento">Modelo</span></a>
+
+      <button class="boton-menu" id="boton-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+      </button>
+
+      <nav class="menu-principal" id="menu-principal" aria-label="Principal">
+        <a class="menu-principal__enlace" href="Index.html#menu-servicios">Servicios</a>
+        <a class="menu-principal__enlace" href="Index.html#como-trabajamos">Proceso</a>
+        <a class="menu-principal__enlace" href="Index.html#opiniones">Opiniones</a>
+        <a class="menu-principal__enlace" href="preguntas.html">Preguntas</a>
+        <a class="menu-principal__enlace menu-principal__enlace--destacado menu-principal__enlace--activo" href="consulta.html" aria-current="page">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Capa borrosa que se muestra detrás del menú móvil -->
+  <div class="menu-fondo" id="menu-fondo"></div>
+
+  <main>
+
+    <!-- ============ FORMULARIO DE CONSULTA ============ -->
+    <section class="consulta" id="consulta">
+      <div class="contenedor consulta__interior">
+
+        <h1 class="consulta__titulo">Hacer una consulta</h1>
+        <p class="consulta__introduccion">
+          Cuéntenos qué trámite necesita y le respondemos a la brevedad.
+          Los campos marcados con * son obligatorios.
+        </p>
+
+        <!-- Contenedor de dos columnas: imagen + formulario -->
+        <div class="consulta__cuadricula">
+
+          <!-- Columna 1: imagen -->
+                     <!-- Columna 1: información de atención -->
+          <aside class="consulta__info">
+            <h2 class="consulta__info-titulo">Estamos para ayudarle</h2>
+            <p>Responderemos su consulta a la brevedad.</p>
+
+            <ul class="consulta__info-lista">
+
+              <!-- Horario -->
+              <li class="consulta__info-item">
+                <img class="consulta__info-icono" src="Img/Img-redes-fother/icons8-globo-de-zona-horaria-50.png" alt="">
+                <div>
+                  <strong>Horario de atención</strong>
+                  Atención telefónica: lunes a viernes de 12 a 18 hs.<br>
+                  Oficina: solo con turno previo.
+                </div>
+              </li>
+
+              <!-- Correo -->
+              <li class="consulta__info-item">
+                <img class="consulta__info-icono" src="Img/Img-redes-fother/icons8-correo-24.png" alt="">
+                <div>
+                  <strong>Correo</strong>
+                  <a href="mailto:contacto@example.com">contacto@example.com</a>
+                </div>
+              </li>
+
+              <!-- WhatsApp -->
+              <li class="consulta__info-item">
+                <img class="consulta__info-icono" src="Img/Img-redes-fother/icons8-whatsapp-24.png" alt="">
+                <div>
+                  <strong>WhatsApp</strong>
+                  <a href="https://wa.me/5491100000000" target="_blank" rel="noopener">+54 9 11 0000-0000</a>
+                </div>
+              </li>
+
+            </ul>
+
+            <!-- Qué pasa después de enviar -->
+            <h3 class="consulta__info-subtitulo">¿Qué sigue?</h3>
+            <ol class="consulta__pasos">
+              <li>Recibimos su consulta.</li>
+              <li>Le respondemos por correo.</li>
+              <li>Le indicamos cómo continuar con el trámite.</li>
+            </ol>
+          </aside>
+
+          <!-- Columna 2: caja del formulario -->
+          <div class="consulta__caja">
+
+            <!-- Formulario -->
+            <p class="consulta__demo">Formulario de demostración: no se envía ni se guarda ninguna información.</p>
+
+            <form class="formulario" id="formulario-consulta" novalidate>
+
+              <!-- Fila 1: nombre y correo -->
+              <div class="formulario__fila">
+
+                <!-- Nombre -->
+                <div class="formulario__campo">
+                  <label class="formulario__etiqueta" for="campo-nombre">Nombre y apellido *</label>
+                  <input class="formulario__entrada" type="text" id="campo-nombre" name="nombre" autocomplete="name">
+                  <p class="formulario__error" id="error-nombre" role="alert"></p>
+                </div>
+
+                <!-- Correo -->
+                <div class="formulario__campo">
+                  <label class="formulario__etiqueta" for="campo-correo">Correo electrónico *</label>
+                  <input class="formulario__entrada" type="email" id="campo-correo" name="correo" autocomplete="email">
+                  <p class="formulario__error" id="error-correo" role="alert"></p>
+                </div>
+
+              </div>
+
+              <!-- Fila 2: teléfono y tipo de trámite -->
+              <div class="formulario__fila">
+
+                <!-- Teléfono (opcional) -->
+                <div class="formulario__campo">
+                  <label class="formulario__etiqueta" for="campo-telefono">Teléfono o WhatsApp </label>
+                  <input class="formulario__entrada" type="tel" id="campo-telefono" name="telefono" autocomplete="tel">
+                  <p class="formulario__error" id="error-telefono" role="alert"></p>
+                </div>
+
+                <!-- Tipo de trámite -->
+                <div class="formulario__campo">
+                  <label class="formulario__etiqueta" for="campo-tramite">Tipo de trámite *</label>
+                  <select class="formulario__entrada" id="campo-tramite" name="tramite">
+                    <option value="">Seleccione una opción</option>
+                    <option>Registro de la Propiedad Inmueble</option>
+                    <option>Catastro: ARBA, AGIP y ABL</option>
+                    <option>Registro Civil</option>
+                    <option>Registro Automotor</option>
+                    <option>Cámara Nacional Electoral</option>
+                    <option>Cédulas y oficios judiciales</option>
+                    <option>Informes y reportes comerciales</option>
+                    <option>Archivo de protocolos</option>
+                    <option>Juicios universales</option>
+                    <option>Apostilla de La Haya</option>
+                    <option>Sucesiones</option>
+                    <option>Crédito hipotecario / Procrear</option>
+                    <option>Otro</option>
+                  </select>
+                  <p class="formulario__error" id="error-tramite" role="alert"></p>
+                </div>
+
+              </div>
+
+              <!-- Mensaje -->
+              <div class="formulario__campo">
+                <label class="formulario__etiqueta" for="campo-mensaje">Su consulta *</label>
+                <textarea class="formulario__entrada formulario__entrada--area" id="campo-mensaje" name="mensaje" rows="3"></textarea>
+                <p class="formulario__error" id="error-mensaje" role="alert"></p>
+              </div>
+
+              <!-- Campo trampa contra robots: las personas no lo ven -->
+              <div class="formulario__trampa" aria-hidden="true">
+                <label for="campo-web">No completar este campo</label>
+                <input type="text" id="campo-web" name="web" tabindex="-1" autocomplete="off">
+              </div>
+
+              <!-- Aceptación de términos -->
+              <div class="formulario__campo formulario__campo--casilla">
+                <input type="checkbox" id="campo-terminos" name="terminos">
+                <label for="campo-terminos">
+                  Acepto los términos y condiciones de demostración *
+                </label>
+                <p class="formulario__error" id="error-terminos" role="alert"></p>
+              </div>
+
+              <!-- Aviso general de envío -->
+              <p class="formulario__aviso" id="aviso-envio" role="alert"></p>
+
+              <button class="formulario__boton" type="submit" id="boton-enviar">Enviar consulta</button>
+            </form>
+
+            <!-- Mensaje de éxito (oculto hasta que se envía) -->
+            <div class="consulta__exito" id="mensaje-exito" hidden>
+              <h2 class="consulta__exito-titulo">¡Recibimos su consulta!</h2>
+              <p>Le responderemos a la brevedad al correo que nos indicó. Ya puede cerrar esta pestaña.</p>
+              <a class="formulario__boton formulario__boton--enlace" href="index.html">Volver al inicio</a>
+            </div>
+
+          </div><!-- cierra consulta__caja -->
+
+        </div><!-- cierra consulta__cuadricula -->
+
+      </div><!-- cierra contenedor consulta__interior -->
+    </section>
+
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor pie__cuadricula">
+
+      <div class="pie__marca">
+        <a class="logotipo" href="#inicio">Gestoría Modelo</a>
+        <p>Gestiones y trámites para profesionales, empresas, particulares y municipios en Capital Federal y Provincia de Buenos Aires.</p>
+      </div>
+
+      <nav class="pie__columna" aria-label="Secciones del sitio">
+        <h3 class="pie__titulo">Sitio</h3>
+        <ul class="pie__lista">
+          <li><a href="Index.html#inicio">Inicio</a></li>
+          <li><a href="Index.html#menu-servicios">Servicios</a></li>
+          <li><a href="consulta.html#consulta">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="pie__columna" aria-label="Información útil">
+        <h3 class="pie__titulo">Información</h3>
+        <ul class="pie__lista">
+          <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+          <li><a href="preguntas.html#pagos">Medios de pago</a></li>
+        </ul>
+      </nav>
+
+      <div class="pie__columna">
+        <h3 class="pie__titulo">Contacto</h3>
+        <ul class="pie__lista">
+          <li>Calle Ejemplo 123, Ciudad Ejemplo, Provincia de Buenos Aires (dirección ficticia)</li>
+          <li><a href="mailto:contacto@example.com">contacto@example.com</a></li>
+          <li><a href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp +54 9 11 0000-0000</a></li>
+          <li>Lunes a viernes, 9 a 20 hs</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pie__base">
+      <p>© <span id="anio-actual">2026</span> Gestoría Modelo.</p>
+      <p class="aviso-demo">Sitio de demostración: los nombres, datos de contacto, opiniones y servicios son ficticios. Proyecto de práctica de Brandon Ventura. Íconos de <a href="https://icons8.com" target="_blank" rel="noopener">Icons8</a> y <a href="https://www.flaticon.com" target="_blank" rel="noopener">Flaticon</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Fondo borroso y ventana con el detalle de cada servicio -->
+  <div class="servicio-fondo" id="servicio-fondo"></div>
+
+  <dialog class="servicio-modal" id="servicio-modal">
+    <button class="servicio-modal__cerrar" type="button" aria-label="Cerrar">&times;</button>
+    <img class="servicio-modal__imagen" id="servicio-modal-imagen" alt="">
+    <div class="servicio-modal__contenido" id="servicio-modal-contenido"></div>
+  </dialog>
+
+  <!-- Scripts: los generales (menú, año) y los del formulario -->
+  <script src="principal.js"></script>
+  <script src="consulta.js"></script>
+</body>
+</html>

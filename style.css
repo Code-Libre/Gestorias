@@ -1,0 +1,1023 @@
+/* ==========================================================
+   GESTORÍA MODELO — Hoja de estilos
+   Índice:
+   1. Variables
+   2. Base
+   3. Componentes reutilizables (contenedor, botones, enlaces)
+   4. Encabezado y navegación
+   5. Portada
+   6. Trámites más utilizados
+   7. Servicios (tarjetas y ventana de detalle)
+   8. Por qué elegirnos
+   9. Opiniones de clientes
+   10. Ubicación
+   11. Pie de página
+   12. Efecto de aparición al desplazarse
+   13. Adaptación a pantallas chicas
+   ========================================================== */
+
+
+/* ---------- 1. VARIABLES ---------- */
+:root {
+  --color-negro: #000;
+  --color-tinta: #14213d;        /* azul marino profundo */
+  --color-tinta-suave: #2b3a5c;
+  --color-sello: #8c1c2b;        /* bordó, como sello de escribanía */
+  --color-laton: #b8893b;        /* ocre del sitio original */
+  --color-papel: #f4f6f8;
+  --color-blanco: #ffffff;
+  --color-texto: #1f2733;
+  --color-linea: #d5dbe3;
+
+  --fuente-titulo: "Newsreader", Georgia, serif;
+  --fuente-texto: "Instrument Sans", system-ui, sans-serif;
+
+  --ancho-maximo: 1120px;
+}
+
+
+/* ---------- 2. BASE ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background: var(--color-blanco);
+}
+
+h1, h2, h3 { font-family: var(--fuente-titulo); line-height: 1.15; margin: 0; }
+
+p { margin: 0 0 1rem; max-width: 65ch; }
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--color-laton);
+  outline-offset: 3px;
+}
+
+
+/* ---------- 3. COMPONENTES REUTILIZABLES ---------- */
+
+/* Contenedor central */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Títulos de sección */
+.seccion__titulo {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: var(--color-tinta);
+  margin-bottom: 1rem;
+}
+.seccion__titulo--claro { color: var(--color-blanco); }
+.seccion__introduccion { color: var(--color-tinta-suave); margin-bottom: 2.5rem; }
+
+/* Botones */
+.boton {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.boton--principal {
+  background: var(--color-blanco);
+  color: var(--color-negro);
+  border-color: transparent;
+  border-radius: 999px;
+}
+.boton--principal:hover { background: #d9d9d9; }
+
+.boton--secundario {
+  background: var(--color-negro);
+  color: var(--color-blanco);
+  border-color: transparent;
+  border-radius: 999px;
+}
+.boton--secundario:hover {
+  background: var(--color-blanco);
+  color: var(--color-negro);
+}
+
+/* Enlace de acción dentro de tarjetas */
+.enlace-accion {
+  font-weight: 600;
+  color: var(--color-sello);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.enlace-accion:hover { color: var(--color-tinta); }
+
+
+/* ---------- 4. ENCABEZADO Y NAVEGACIÓN ---------- */
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--color-negro);
+  transition: box-shadow 0.2s;
+}
+.encabezado--con-sombra {
+  background: var(--color-negro);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.encabezado__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 4.5rem;
+}
+
+.logotipo {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+/* Línea de abajo que se dibuja de izquierda a derecha al pasar el mouse */
+.logotipo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-blanco);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.logotipo:hover::after { transform: scaleX(1); }
+
+.logotipo__acento { color: var(--color-blanco); }
+
+.menu-principal {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.menu-principal__enlace {
+  position: relative;
+  color: #dfe5ee;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+
+/* La línea de abajo: arranca sin ancho y se dibuja hacia la derecha */
+.menu-principal__enlace::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-blanco);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.menu-principal__enlace:hover,
+.menu-principal__enlace--activo {
+  color: var(--color-blanco);
+}
+
+.menu-principal__enlace:hover::after,
+.menu-principal__enlace--activo::after {
+  transform: scaleX(1);
+}
+
+
+/* Botón del menú: hamburguesa (solo visible en celulares) */
+.boton-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 64px;
+  height: 40px;
+  padding: 0 18px;
+  background: var(--color-negro);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton-menu__linea {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-blanco);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.boton-menu:hover {
+  background: var(--color-blanco);
+}
+
+.boton-menu:hover .boton-menu__linea {
+  background: var(--color-negro);
+}
+
+/* Cuando el menú está abierto, las líneas forman una X */
+.boton-menu[aria-expanded="true"] .boton-menu__linea:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.boton-menu[aria-expanded="true"] .boton-menu__linea:nth-child(2) { opacity: 0; }
+.boton-menu[aria-expanded="true"] .boton-menu__linea:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Capa que desenfoca el sitio cuando el menú móvil está abierto */
+.menu-fondo {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9; /* debajo del encabezado (z-index: 10) */
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+
+/* ---------- 5. PORTADA ---------- */
+.portada {
+  position: relative;
+  background: var(--color-negro);
+  color: var(--color-blanco);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(8rem, 16vw, 11rem) 0 clamp(4rem, 12vw, 8rem);
+  clip-path: inset(0);
+}
+
+/* Imagen de fondo fija (efecto parallax) */
+.portada__imagen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+/* El contenido queda por encima de la imagen */
+.portada__interior {
+  position: relative;
+}
+
+/* Texto de la portada */
+.portada__precede {
+  color: var(--color-blanco);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.portada__titulo {
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+/* Lema de la portada */
+.portada__lema {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  width: fit-content;
+}
+
+.portada__lema-item {
+  font-family: var(--fuente-texto);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 0 1.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* El primero no lleva línea a la izquierda ni espacio de más */
+.portada__lema-item:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+
+.portada__texto {
+  color: #dfe5ee;
+  font-size: 1.25rem;
+  max-width: 60ch;
+}
+
+/* Botones de la portada */
+.portada__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+
+/* ---------- 7. SERVICIOS ---------- */
+.servicios { padding: 3.5rem 0; }
+
+.servicios .seccion__titulo,
+.servicios .seccion__introduccion {
+  text-align: center;
+}
+
+.servicios .seccion__introduccion {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.75rem;
+}
+
+.servicios__cuadricula {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Tarjeta de cada servicio */
+.servicio {
+  background: var(--color-negro);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.servicio:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
+}
+
+.servicio__boton {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: var(--color-blanco);
+  text-align: left;
+}
+
+.servicio__imagen {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+  will-change: transform;
+}
+.servicio__boton:hover .servicio__imagen { transform: scale(1.06); }
+
+.servicio__nombre {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1rem 0.9rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* El enlace queda siempre abajo, aunque los textos tengan distinto largo */
+.servicio .enlace-accion { margin-top: auto; }
+
+.servicio__titulo { font-size: 1.1rem; margin-bottom: 0.4rem; }
+.servicio__texto { font-size: 0.9rem; color: #4a5567; margin-bottom: 0.75rem; }
+
+/* Capa que desenfoca el sitio cuando se abre un servicio */
+.servicio-fondo {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 11; /* por encima del encabezado */
+  background: rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.servicio-fondo--visible { display: block; }
+
+/* Ventana del detalle */
+.servicio-modal {
+  width: min(92vw, 520px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0;
+  border: 0;
+  border-top: 4px solid var(--color-negro);
+  border-radius: 8px;
+  background: var(--color-blanco);
+  color: var(--color-texto);
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* El desenfoque lo da .servicio-fondo; esta capa queda transparente */
+.servicio-modal::backdrop { background: transparent; }
+
+.servicio-modal__imagen {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.servicio-modal__contenido { padding: 1.5rem 1.75rem 2rem; }
+
+.servicio-modal__cerrar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  color: var(--color-tinta);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.servicio-modal__cerrar:hover { background: var(--color-blanco); }
+
+.servicio-modal .servicio__titulo { font-size: 1.5rem; color: var(--color-tinta); margin-bottom: 0.75rem; }
+.servicio-modal .servicio__texto { font-size: 1rem; color: #4a5567; margin: 0 auto 1.25rem; }
+
+
+/* ---------- 8. POR QUÉ ELEGIRNOS ---------- */
+.ventajas {
+  padding: 4rem 0;
+  background: var(--color-papel);
+}
+
+.ventajas__cuadricula {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.ventajas__imagen {
+  align-self: stretch;
+  min-height: 380px;
+  border-top: 4px solid var(--color-negro);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.ventajas__imagen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ventajas__contenido .seccion__introduccion { margin-bottom: 1.75rem; }
+
+.ventajas__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ventaja {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ventaja__icono {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-negro);
+  border-radius: 50%;
+}
+
+.ventaja__icono img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* vuelve blanco el ícono negro */
+}
+
+.ventaja__titulo { font-size: 1.2rem; color: var(--color-tinta); margin-bottom: 0.2rem; }
+.ventaja__texto { font-size: 0.97rem; color: #4a5567; margin: 0; }
+
+
+/* ---------- 9. OPINIONES DE CLIENTES ---------- */
+.opiniones {
+  padding: 3.5rem 0;
+  background: var(--color-blanco);
+}
+
+.opiniones .seccion__titulo,
+.opiniones .seccion__introduccion { text-align: center; }
+
+.opiniones .seccion__introduccion {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.75rem;
+}
+
+/* Carrusel de opiniones */
+.opiniones__lista {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;           /* oculta la barra en Firefox */
+  padding: 0.25rem 0 0.5rem;
+}
+.opiniones__lista::-webkit-scrollbar { display: none; }  /* y en Chrome/Safari */
+
+/* 3 tarjetas visibles en compu, 2 en tablet, 1 en celular */
+.opinion {
+  flex: 0 0 calc((100% - 2.5rem) / 3);
+  scroll-snap-align: start;
+}
+@media (max-width: 900px) { .opinion { flex-basis: calc((100% - 1.25rem) / 2); } }
+@media (max-width: 560px) { .opinion { flex-basis: 100%; } }
+
+/* Flechas */
+.carrusel__controles {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.carrusel__flecha {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0 0 0.2rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--color-blanco);
+  background: var(--color-negro);
+  border: 2px solid var(--color-negro);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.carrusel__flecha:hover {
+  background: var(--color-blanco);
+  color: var(--color-negro);
+}
+
+.opinion {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-papel);
+  border: 1px solid var(--color-linea);
+  border-top: 4px solid var(--color-negro);
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+}
+
+.opinion__texto {
+  margin: 0 0 1rem;
+  font-family: var(--fuente-titulo);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--color-texto);
+}
+
+.opinion__autor { font-weight: 600; color: var(--color-tinta); font-size: 0.95rem; }
+.opinion__origen { display: block; font-weight: 400; font-size: 0.85rem; color: #4a5567; }
+
+.opiniones__accion { text-align: center; margin-top: 2rem; }
+
+.opiniones__accion .boton--secundario:hover {
+  background: #d9d9d9;
+  color: var(--color-negro);
+}
+
+/* ---------- 9B. CÓMO TRABAJAMOS ---------- */
+.proceso {
+  padding: 3.5rem 0;
+  background: var(--color-papel);
+}
+
+.proceso .seccion__titulo,
+.proceso .seccion__introduccion { text-align: center; }
+
+.proceso .seccion__introduccion {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.25rem;
+}
+
+.proceso__pasos {
+  --circulo: 3.5rem;
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+/* Barra de carga: fondo gris y relleno negro */
+.proceso__pista {
+  position: absolute;
+  top: calc(var(--circulo) / 2);
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  transform: translateY(-50%);
+  background: var(--color-linea);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.proceso__relleno {
+  width: 0;
+  height: 100%;
+  background: var(--color-negro);
+  border-radius: inherit;
+  transition-property: width;
+  transition-timing-function: linear;
+  transition-duration: 0.3s;
+}
+
+.proceso__lista {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.proceso__paso {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--color-tinta);
+  cursor: pointer;
+}
+
+.proceso__circulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--circulo);
+  height: var(--circulo);
+  border: 3px solid var(--color-linea);
+  border-radius: 50%;
+  background: var(--color-blanco);
+  transition: background-color 0.35s, border-color 0.35s, transform 0.35s;
+  transition-delay: var(--retraso, 0s);
+}
+
+.proceso__circulo img {
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  transition: filter 0.35s;
+  transition-delay: var(--retraso, 0s);
+}
+
+.proceso__nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-tinta-suave);
+  transition: color 0.35s;
+  transition-delay: var(--retraso, 0s);
+}
+
+.proceso__paso:hover .proceso__circulo { border-color: var(--color-negro); }
+
+/* Etapas ya recorridas: círculo negro e ícono blanco */
+.proceso__paso--hecho .proceso__circulo {
+  background: var(--color-negro);
+  border-color: var(--color-negro);
+}
+.proceso__paso--hecho .proceso__circulo img { filter: brightness(0) invert(1); }
+.proceso__paso--hecho .proceso__nombre { color: var(--color-tinta); }
+
+/* Etapa seleccionada: se agranda y emite un pulso */
+.proceso__paso--activo .proceso__circulo {
+  transform: scale(1.12);
+  animation: proceso-pulso 1.8s ease-out infinite;
+  animation-delay: var(--retraso, 0s);
+}
+
+@keyframes proceso-pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.35); }
+  70%  { box-shadow: 0 0 0 14px rgba(0, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+/* Panel con el detalle */
+.proceso__panel {
+  max-width: 640px;
+  margin: 2.25rem auto 0;
+  padding: 1.75rem 1.75rem 2rem;
+  text-align: center;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-linea);
+  border-top: 4px solid var(--color-negro);
+  border-radius: 8px;
+}
+
+.proceso__panel--entra { animation: proceso-entra 0.5s ease both; }
+
+@keyframes proceso-entra {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.proceso__panel-titulo { font-size: 1.5rem; color: var(--color-tinta); margin-bottom: 0.5rem; }
+.proceso__panel-texto { margin: 0 auto; color: #4a5567; }
+
+/* ---------- 10. UBICACIÓN ---------- */
+.ubicacion {
+  padding: 5rem 0;
+  background: var(--color-negro);
+  color: #dfe5ee;
+}
+
+.ubicacion .seccion__titulo { text-align: center; }
+
+.ubicacion__cuadricula {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  align-items: stretch;
+}
+
+.ubicacion__direccion {
+  font-family: var(--fuente-titulo);
+  font-size: 1.5rem;
+  font-style: normal;
+  color: var(--color-blanco);
+  margin-bottom: 1.5rem;
+}
+
+.ubicacion__datos {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 1.5rem 0 0;
+  border-top: 1px solid #333;
+}
+.ubicacion__datos li { margin-bottom: 0.5rem; }
+
+/* Cada dato con su ícono al lado */
+.ubicacion__dato {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ubicacion__icono {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* vuelve blanco el ícono negro */
+}
+
+.ubicacion__enlace { color: var(--color-blanco); }
+.ubicacion__enlace:hover { color: #bbb; }
+
+/* Mapa */
+.ubicacion__mapa {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border-top: 4px solid var(--color-blanco);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ubicacion__mapa-marco {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* ---------- 11. PIE DE PÁGINA ---------- */
+.pie {
+  background: #0d162b;
+  color: #aab4c5;
+  font-size: 0.95rem;
+}
+
+.pie__cuadricula {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 2.5rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.pie__marca p { margin-top: 1rem; font-size: 0.95rem; }
+
+.pie__titulo {
+  font-family: var(--fuente-texto);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-blanco);
+  margin-bottom: 1rem;
+}
+
+.pie__lista { list-style: none; margin: 0; padding: 0; }
+.pie__lista li { margin-bottom: 0.6rem; }
+
+.pie__lista a {
+  color: #aab4c5;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.pie__lista a:hover {
+  color: var(--color-blanco);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pie__base {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+.pie__base p { margin: 0 auto; max-width: none; }
+
+
+/* ---------- 12. EFECTO DE APARICIÓN AL DESPLAZARSE ---------- */
+.revelar {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.revelar--visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ---------- BOTÓN FLOTANTE WHATSAPP ---------- */
+.boton-whatsapp {
+  position: fixed;
+  bottom: 1.8rem;
+  right: 1.8rem;
+  z-index: 999; /* Siempre por encima de todo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Verde oficial de WhatsApp */
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+.boton-whatsapp:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+  background-color: #20ba5a;
+}
+
+/* El ícono que tenés en tu máquina */
+.boton-whatsapp__icono {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 560px) {
+  .boton-whatsapp {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+  .boton-whatsapp__icono {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ---------- 13. ADAPTACIÓN A PANTALLAS CHICAS ---------- */
+@media (max-width: 900px) {
+  .boton-menu { display: flex; }
+
+  .menu-principal {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #111111;
+    border-top: 1px solid var(--color-tinta-suave);
+  }
+  .menu-principal--abierto { display: flex; }
+
+  /* Muestra la capa borrosa cuando el menú está abierto */
+  .menu-fondo--visible { display: block; }
+
+  /* Por qué elegirnos: la imagen pasa arriba y la información debajo */
+  .ventajas__cuadricula { grid-template-columns: 1fr; gap: 2rem; }
+  .ventajas__imagen { height: 260px; min-height: 0; }
+
+  .ubicacion__cuadricula { grid-template-columns: 1fr; }
+  .pie__cuadricula { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .pie__cuadricula { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* Para quienes tienen activada la opción de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .revelar { opacity: 1; transform: none; }
+  .opiniones__lista { scroll-behavior: auto; }
+  .proceso__paso--activo .proceso__circulo,
+  .proceso__panel--entra { animation: none; }
+}
+
+/* ---------- AVISO DE DEMOSTRACIÓN Y MAPA DE EJEMPLO ---------- */
+.pie__base .aviso-demo {
+  margin-top: 0.5rem;
+  max-width: 62ch;
+  opacity: 0.85;
+}
+
+.pie__base .aviso-demo a { color: inherit; text-decoration: underline; }
+
+.ubicacion__mapa-marco--demo {
+  display: grid;
+  place-items: center;
+  min-height: 380px;
+  padding: 1rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-blanco);
+}

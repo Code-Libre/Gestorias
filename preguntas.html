@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preguntas frecuentes | Gestoría Modelo</title>
+  <meta name="description" content="Medios de pago, turnos, documentación y plazos: respondemos las dudas más comunes sobre nuestros trámites.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Hojas de estilo: las generales y las de esta página -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="preguntas.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO / NAVEGACIÓN ============ -->
+  <header class="encabezado" id="inicio-encabezado">
+    <div class="contenedor encabezado__interior">
+      <a class="logotipo" href="index.html">Gestoría <span class="logotipo__acento">Modelo</span></a>
+
+      <button class="boton-menu" id="boton-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+      </button>
+
+      <nav class="menu-principal" id="menu-principal" aria-label="Principal">
+        <a class="menu-principal__enlace" href="Index.html#menu-servicios">Servicios</a>
+        <a class="menu-principal__enlace" href="Index.html#como-trabajamos">Proceso</a>
+        <a class="menu-principal__enlace" href="Index.html#opiniones">Opiniones</a>
+        <a class="menu-principal__enlace menu-principal__enlace--activo" href="preguntas.html" aria-current="page">Preguntas</a>
+        <a class="menu-principal__enlace menu-principal__enlace--destacado" href="consulta.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Capa borrosa que se muestra detrás del menú móvil -->
+  <div class="menu-fondo" id="menu-fondo"></div>
+
+  <main>
+
+    <!-- ============ PREGUNTAS FRECUENTES ============ -->
+    <!-- BOCETO: las respuestas son texto de ejemplo.
+         Confirmar con la gestoría medios de pago, adelantos, plazos y zonas antes de publicar. -->
+    <section class="preguntas">
+      <div class="contenedor preguntas__interior">
+
+        <h1 class="preguntas__titulo">Preguntas frecuentes</h1>
+        <p class="preguntas__introduccion">
+          Reunimos las dudas más comunes sobre pagos, turnos y documentación.
+          Si no encuentra la suya, escríbanos.
+        </p>
+
+        <!-- ---- Pagos ---- -->
+        <div class="preguntas__grupo" id="pagos">
+          <h2 class="preguntas__grupo-titulo">Pagos y costos</h2>
+          <div class="preguntas__lista">
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Cuáles son los medios de pago?</summary>
+              <div class="pregunta__respuesta">
+                <p>Aceptamos transferencia bancaria y efectivo en la atención presencial. Al aceptar el presupuesto le enviamos los datos para abonar.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Cuánto cuesta un trámite?</summary>
+              <div class="pregunta__respuesta">
+                <p>Depende del tipo de trámite, del organismo y del plazo. Le pasamos un presupuesto claro antes de empezar y sin compromiso.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Tengo que pagar por adelantado?</summary>
+              <div class="pregunta__respuesta">
+                <p>Las tasas y aranceles de los organismos suelen abonarse al iniciar el trámite, por eso se solicita un adelanto. Le informamos el monto exacto antes de comenzar.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿El presupuesto incluye las tasas de los organismos?</summary>
+              <div class="pregunta__respuesta">
+                <p>Sí, el presupuesto detalla por separado nuestros honorarios y las tasas del organismo, para que sepa qué paga en cada caso.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ---- Turnos y atención ---- -->
+        <div class="preguntas__grupo">
+          <h2 class="preguntas__grupo-titulo">Turnos y atención</h2>
+          <div class="preguntas__lista">
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Hay que abonar algo para sacar turno?</summary>
+              <div class="pregunta__respuesta">
+                <p>No. Pedir turno para la atención presencial no tiene costo. Solo se abona el trámite una vez aceptado el presupuesto.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Cómo pido un turno y cuándo atienden?</summary>
+              <div class="pregunta__respuesta">
+                <p>Puede pedirlo por WhatsApp o desde el formulario de consulta. La atención presencial es solo con turno previo, de lunes a viernes de 9 a 20 hs, en Calle Ejemplo 123, Ciudad Ejemplo.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Tengo que ir personalmente?</summary>
+              <div class="pregunta__respuesta">
+                <p>En muchos trámites no hace falta: se gestionan a distancia con la documentación que nos envíe. Algunos requieren firma o presencia del titular, y se lo avisamos al evaluar su caso.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ---- Documentación y plazos ---- -->
+        <div class="preguntas__grupo">
+          <h2 class="preguntas__grupo-titulo">Documentación y plazos</h2>
+          <div class="preguntas__lista">
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Qué documentación necesito?</summary>
+              <div class="pregunta__respuesta">
+                <p>Depende del trámite. Al consultarnos le indicamos la lista exacta, así no pierde tiempo reuniendo papeles de más.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Cuánto demora un trámite?</summary>
+              <div class="pregunta__respuesta">
+                <p>Varía según el organismo y el tipo de trámite. Le damos un plazo estimado junto con el presupuesto y le avisamos si hay demoras ajenas a nosotros.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Hacen trámites urgentes y hasta dónde llegan?</summary>
+              <div class="pregunta__respuesta">
+                <p>Algunos organismos ofrecen una modalidad urgente, generalmente con un costo adicional; consúltenos según su caso. Trabajamos en Capital Federal y Provincia de Buenos Aires.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ---- Seguimiento ---- -->
+        <div class="preguntas__grupo">
+          <h2 class="preguntas__grupo-titulo">Seguimiento y entrega</h2>
+          <div class="preguntas__lista">
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Cómo me entero de cómo avanza mi trámite?</summary>
+              <div class="pregunta__respuesta">
+                <p>Le avisamos por WhatsApp o por correo en cada etapa, y puede consultarnos cuando quiera.</p>
+              </div>
+            </details>
+
+            <details class="pregunta">
+              <summary class="pregunta__resumen">¿Cómo recibo la documentación terminada?</summary>
+              <div class="pregunta__respuesta">
+                <p>Puede retirarla en nuestra oficina con turno previo o recibirla en formato digital cuando el trámite lo permite.</p>
+              </div>
+            </details>
+
+          </div>
+        </div>
+
+        <!-- ---- Cierre ---- -->
+        <div class="preguntas__cta">
+          <h2 class="preguntas__cta-titulo">¿No encontró su duda?</h2>
+          <p>Cuéntenos qué trámite necesita y le respondemos a la brevedad.</p>
+          <a class="boton boton--principal" href="consulta.html">Hacer una consulta</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor pie__cuadricula">
+
+      <div class="pie__marca">
+        <a class="logotipo" href="#inicio">Gestoría Modelo</a>
+        <p>Gestiones y trámites para profesionales, empresas, particulares y municipios en Capital Federal y Provincia de Buenos Aires.</p>
+      </div>
+
+      <nav class="pie__columna" aria-label="Secciones del sitio">
+        <h3 class="pie__titulo">Sitio</h3>
+        <ul class="pie__lista">
+          <li><a href="Index.html#inicio">Inicio</a></li>
+          <li><a href="Index.html#menu-servicios">Servicios</a></li>
+          <li><a href="consulta.html#consulta">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="pie__columna" aria-label="Información útil">
+        <h3 class="pie__titulo">Información</h3>
+        <ul class="pie__lista">
+          <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+          <li><a href="preguntas.html#pagos">Medios de pago</a></li>
+        </ul>
+      </nav>
+
+      <div class="pie__columna">
+        <h3 class="pie__titulo">Contacto</h3>
+        <ul class="pie__lista">
+          <li>Calle Ejemplo 123, Ciudad Ejemplo, Provincia de Buenos Aires (dirección ficticia)</li>
+          <li><a href="mailto:contacto@example.com">contacto@example.com</a></li>
+          <li><a href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp +54 9 11 0000-0000</a></li>
+          <li>Lunes a viernes, 9 a 20 hs</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pie__base">
+      <p>© <span id="anio-actual">2026</span> Gestoría Modelo.</p>
+      <p class="aviso-demo">Sitio de demostración: los nombres, datos de contacto, opiniones y servicios son ficticios. Proyecto de práctica de Brandon Ventura. Íconos de <a href="https://icons8.com" target="_blank" rel="noopener">Icons8</a> y <a href="https://www.flaticon.com" target="_blank" rel="noopener">Flaticon</a>.</p>
+    </div>
+  </footer>
+
+  <!-- Fondo borroso y ventana con el detalle de cada servicio -->
+  <div class="servicio-fondo" id="servicio-fondo"></div>
+
+  <dialog class="servicio-modal" id="servicio-modal">
+    <button class="servicio-modal__cerrar" type="button" aria-label="Cerrar">&times;</button>
+    <img class="servicio-modal__imagen" id="servicio-modal-imagen" alt="">
+    <div class="servicio-modal__contenido" id="servicio-modal-contenido"></div>
+  </dialog>
+
+  <!-- Scripts generales (menú, año) -->
+  <script src="principal.js"></script>
+</body>
+</html>

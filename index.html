@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestoría Modelo | Gestiones y trámites en CABA y Provincia de Buenos Aires</title>
+  <meta name="description" content="Gestiones y trámites para profesionales, empresas, particulares y municipios en Capital Federal y Provincia de Buenos Aires.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ ENCABEZADO / NAVEGACIÓN ============ -->
+  <header class="encabezado" id="inicio-encabezado">
+    <div class="contenedor encabezado__interior">
+      <a class="logotipo" href="index.html#inicio">Gestoría <span class="logotipo__acento">Modelo</span></a>
+
+      <button class="boton-menu" id="boton-menu" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+      </button>
+
+      <nav class="menu-principal" id="menu-principal" aria-label="Principal">
+        <a class="menu-principal__enlace" href="#menu-servicios">Servicios</a>
+        <a class="menu-principal__enlace" href="#como-trabajamos">Proceso</a>
+        <a class="menu-principal__enlace" href="#opiniones">Opiniones</a>
+        <a class="menu-principal__enlace" href="preguntas.html">Preguntas</a>
+        <a class="menu-principal__enlace menu-principal__enlace--destacado" href="consulta.html">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Capa borrosa que se muestra detrás del menú móvil -->
+  <div class="menu-fondo" id="menu-fondo"></div>
+
+  <main>
+
+    <!-- ============ PORTADA ============ -->
+    <section class="portada" id="inicio">
+      <!-- Imagen de fondo de la portada -->
+      <img class="portada__imagen" src="Img/Img-FondoInicio/Fondo-Inicio(1).jpg" alt="">
+
+      <div class="contenedor portada__interior">
+        <p class="portada__precede">Bienvenidos a</p>
+        <h1 class="portada__titulo">Gestoría Modelo</h1>
+
+        <!-- Lema de la portada -->
+        <ul class="portada__lema">
+          <li class="portada__lema-item">Simple</li>
+          <li class="portada__lema-item">Rápido</li>
+          <li class="portada__lema-item">Profesional</li>
+        </ul>
+
+        <p class="portada__texto">
+          Nuestro objetivo es satisfacer las necesidades de profesionales, empresas,
+          particulares y municipios en las gestiones y trámites que necesiten en el
+          ámbito de la Capital Federal y la Provincia de Buenos Aires.
+        </p>
+        <p class="portada__texto">
+          No dude en contactarnos: estamos para aclarar sus dudas y llevar adelante su gestión.
+        </p>
+        <div class="portada__acciones">
+          <a class="boton boton--principal" href="consulta.html">Hacer una consulta</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="servicios" id="menu-servicios">
+      <div class="contenedor">
+        <h2 class="seccion__titulo">Qué servicios ofrecemos</h2>
+        <p class="seccion__introduccion">Seleccione el área de su interés para iniciar el trámite. Encontrará más información sobre cada uno.</p>
+
+        <div class="servicios__cuadricula">
+
+          <!-- Registro de la Propiedad Inmueble -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/registro-de-inmueble.webp" alt="">
+              <span class="servicio__nombre">Registro de la Propiedad Inmueble</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Registro de la Propiedad Inmueble</h3>
+              <p class="servicio__texto">Dominio, inhibición, frecuencia, índice de titularidad, búsqueda de matrícula, inscripción de declaratoria, embargos y más.</p>
+              <a class="enlace-accion" href="consulta.html">Ver mas</a>
+            </div>
+          </article>
+
+          <!-- Catastro -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/catastro-ARBA.webp" alt="">
+              <span class="servicio__nombre">Catastro: ARBA, AGIP y ABL</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Catastro: ARBA, AGIP y ABL</h3>
+              <p class="servicio__texto">Plancheta, cédula parcelaria, copia de pantalla, copia de planos, mensura, valuación fiscal, partida ARBA y ABL, certificado catastral y más.</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+          <!-- Registro Civil -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/registro-civil.webp" alt="">
+              <span class="servicio__nombre">Registro Civil</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Registro Civil</h3>
+              <p class="servicio__texto">Copia de actas y partidas (nacimiento, defunción, matrimonio), apostilla de La Haya, inscripción de divorcio, anotaciones marginales y más.</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+          <!-- Registro Automotor -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/registro-automotor.webp" alt="">
+              <span class="servicio__nombre">Registro Automotor</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Registro Automotor</h3>
+              <p class="servicio__texto">Informes de dominio, inhibición, histórico, nominal (índice de titularidad), embargos y más.</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+          <!-- Cédulas y oficios judiciales -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/cedulas-oficios-judicioales.webp" alt="">
+              <span class="servicio__nombre">Cédulas y oficios judiciales</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Cédulas y oficios judiciales</h3>
+              <p class="servicio__texto">Cédulas Ley 22.172 y oficios a distintas entidades: oficinas públicas, empresas privadas y más.</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+          <!-- Archivo de protocolos -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/archivos-de-protocolos.webp" alt="">
+              <span class="servicio__nombre">Archivo de protocolos</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Archivo de protocolos</h3>
+              <p class="servicio__texto">Copias de escrituras y reglamentos, y segundo testimonio.</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+          <!-- Apostilla de La Haya -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/apostilla-de-la-haya.webp" alt="">
+              <span class="servicio__nombre">Apostilla de La Haya</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Apostilla de La Haya</h3>
+              <p class="servicio__texto">Apostilla de documentos (Ministerio de Relaciones Exteriores) y legalización (Ministerio del Interior).</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+          <!-- Sucesiones -->
+          <article class="servicio">
+            <button class="servicio__boton" type="button">
+              <img class="servicio__imagen" src="Img/Imag-Menu-Servicios/sucesiones(1).webp" alt="">
+              <span class="servicio__nombre">Sucesiones</span>
+            </button>
+            <div class="servicio__detalle" hidden>
+              <h3 class="servicio__titulo">Sucesiones</h3>
+              <p class="servicio__texto">Tramitación de sucesiones en Capital Federal y Provincia de Buenos Aires.</p>
+              <a class="enlace-accion" href="consulta.html">Ver más</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ POR QUÉ ELEGIRNOS ============ -->
+    <section class="ventajas" id="por-que-elegirnos">
+      <div class="contenedor ventajas__cuadricula">
+
+        <!-- Columna izquierda: imagen -->
+        <div class="ventajas__imagen">
+          <img src="Img/Img-Porque-Elegirnos/Img-Porque-elegirnos.jpg" alt="" loading="lazy">
+        </div>
+
+        <!-- Columna derecha: información -->
+        <div class="ventajas__contenido">
+          <h2 class="seccion__titulo">Por qué elegirnos</h2>
+          <p class="seccion__introduccion">Gestionamos sus trámites en Capital Federal y Provincia de Buenos Aires, de forma simple, rápida y profesional.</p>
+
+          <ul class="ventajas__lista">
+
+            <li class="ventaja">
+              <span class="ventaja__icono"><img src="Img/Img-Porque-Elegirnos/Icono-Tiempo.png" alt=""></span>
+              <div>
+                <h3 class="ventaja__titulo">Rápido y sin vueltas</h3>
+                <p class="ventaja__texto">Gestionamos su trámite con agilidad, para que usted no pierda tiempo.</p>
+              </div>
+            </li>
+
+            <li class="ventaja">
+              <span class="ventaja__icono"><img src="Img/Img-Porque-Elegirnos/Icono-Atencion.png" alt=""></span>
+              <div>
+                <h3 class="ventaja__titulo">Atención cercana</h3>
+                <p class="ventaja__texto">Lo acompañamos durante todo el proceso y respondemos sus dudas.</p>
+              </div>
+            </li>
+
+            <li class="ventaja">
+              <span class="ventaja__icono"><img src="Img/Img-Porque-Elegirnos/Icono-Profecionalismo.png" alt=""></span>
+              <div>
+                <h3 class="ventaja__titulo">Profesionalismo</h3>
+                <p class="ventaja__texto">Cada trámite se gestiona con dedicación y seguimiento de principio a fin.</p>
+              </div>
+            </li>
+
+            <li class="ventaja">
+              <span class="ventaja__icono"><img src="Img/Img-Porque-Elegirnos/Icono-Monetizacion.png" alt=""></span>
+              <div>
+                <h3 class="ventaja__titulo">Claridad en precios</h3>
+                <p class="ventaja__texto">Presupuesto claro antes de empezar y trato sincero desde la primera consulta.</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ OPINIONES DE CLIENTES ============ -->
+    <section class="opiniones" id="opiniones">
+      <div class="contenedor">
+        <h2 class="seccion__titulo">Lo que dicen nuestros clientes</h2>
+        <p class="seccion__introduccion">Opiniones de ejemplo, escritas para esta demostración. No corresponden a clientes reales.</p>
+
+        <div class="carrusel">
+
+          <div class="opiniones__lista" id="opiniones-lista" tabindex="0" aria-label="Opiniones de clientes">
+
+            <figure class="opinion">
+              <blockquote class="opinion__texto">“Me explicaron cada paso y tuve mi trámite listo antes de lo previsto.”</blockquote>
+              <figcaption class="opinion__autor">Laura S.<span class="opinion__origen">⭐⭐⭐⭐⭐</span></figcaption>
+            </figure>
+
+            <figure class="opinion">
+              <blockquote class="opinion__texto">“Hicimos la transferencia del auto sin vueltas. Atención clara y amable.”</blockquote>
+              <figcaption class="opinion__autor">Diego R.<span class="opinion__origen">⭐⭐⭐⭐⭐</span></figcaption>
+            </figure>
+
+            <figure class="opinion">
+              <blockquote class="opinion__texto">“Pedí un presupuesto por WhatsApp y me respondieron el mismo día.”</blockquote>
+              <figcaption class="opinion__autor">Natalia P.<span class="opinion__origen">⭐⭐⭐⭐⭐</span></figcaption>
+            </figure>
+
+            <figure class="opinion">
+              <blockquote class="opinion__texto">“Muy ordenados con la documentación. Me avisaron en cada etapa.”</blockquote>
+              <figcaption class="opinion__autor">Gustavo F.<span class="opinion__origen">⭐⭐⭐⭐⭐</span></figcaption>
+            </figure>
+
+            <figure class="opinion">
+              <blockquote class="opinion__texto">“Era mi primera sucesión y me sentí acompañado todo el tiempo.”</blockquote>
+              <figcaption class="opinion__autor">Silvia T.<span class="opinion__origen">⭐⭐⭐⭐⭐</span></figcaption>
+            </figure>
+
+            <figure class="opinion">
+              <blockquote class="opinion__texto">“Precios claros desde el principio, sin sorpresas.”</blockquote>
+              <figcaption class="opinion__autor">Hernán B.<span class="opinion__origen">⭐⭐⭐⭐⭐</span></figcaption>
+            </figure>
+
+          </div>
+
+          <div class="carrusel__controles">
+            <button class="carrusel__flecha carrusel__flecha--anterior" type="button" aria-label="Opinión anterior">&#8249;</button>
+            <button class="carrusel__flecha carrusel__flecha--siguiente" type="button" aria-label="Opinión siguiente">&#8250;</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CÓMO TRABAJAMOS ============ -->
+<section class="proceso" id="como-trabajamos">
+  <div class="contenedor">
+    <h2 class="seccion__titulo">Cómo trabajamos</h2>
+    <p class="seccion__introduccion">Conozca el proceso paso a paso. Toque cada etapa para ver en qué consiste.</p>
+
+    <div class="proceso__pasos">
+
+      <!-- Barra de carga -->
+      <div class="proceso__pista" aria-hidden="true">
+        <div class="proceso__relleno" id="proceso-relleno"></div>
+      </div>
+
+      <div class="proceso__lista" role="tablist" aria-label="Etapas del proceso">
+
+        <button class="proceso__paso" type="button" role="tab" id="paso-proceso-1" aria-controls="proceso-panel"
+                data-titulo="Consulta"
+                data-texto="Usted nos cuenta qué trámite necesita. Respondemos sus dudas y le indicamos cómo avanzar.">
+          <span class="proceso__circulo"><img src="Img/Imag-Proceso-tramites/icons8-mensaje-de-telefono-50.png" alt=""></span>
+          <span class="proceso__nombre">Consulta</span>
+        </button>
+
+        <button class="proceso__paso" type="button" role="tab" id="paso-proceso-2" aria-controls="proceso-panel"
+                data-titulo="Presupuesto"
+                data-texto="Le informamos el costo y los plazos estimados antes de empezar, para que sepa de antemano a qué atenerse.">
+          <span class="proceso__circulo"><img src="Img/Imag-Proceso-tramites/icons8-presupuesto-50.png" alt=""></span>
+          <span class="proceso__nombre">Presupuesto</span>
+        </button>
+
+        <button class="proceso__paso" type="button" role="tab" id="paso-proceso-3" aria-controls="proceso-panel"
+                data-titulo="Documentación"
+                data-texto="Le indicamos qué documentación se necesita y la revisamos juntos antes de iniciar el trámite.">
+          <span class="proceso__circulo"><img src="Img/Imag-Proceso-tramites/icons8-firmar-un-documento-50.png" alt=""></span>
+          <span class="proceso__nombre">Documentación</span>
+        </button>
+
+        <button class="proceso__paso" type="button" role="tab" id="paso-proceso-4" aria-controls="proceso-panel"
+                data-titulo="Gestión"
+                data-texto="Realizamos el trámite ante el organismo correspondiente y le mantenemos al tanto del avance.">
+          <span class="proceso__circulo"><img src="Img/Imag-Proceso-tramites/icons8-administracion-50.png" alt=""></span>
+          <span class="proceso__nombre">Gestión</span>
+        </button>
+
+        <button class="proceso__paso" type="button" role="tab" id="paso-proceso-5" aria-controls="proceso-panel"
+                data-titulo="Entrega"
+                data-texto="Le entregamos el resultado del trámite y quedamos a disposición ante cualquier consulta.">
+          <span class="proceso__circulo"><img src="Img/Imag-Proceso-tramites/icons8-entrega-puerta-a-puerta-50.png" alt=""></span>
+          <span class="proceso__nombre">Entrega</span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Detalle de la etapa elegida -->
+    <div class="proceso__panel" id="proceso-panel" role="tabpanel" aria-live="polite">
+      <h3 class="proceso__panel-titulo" id="proceso-panel-titulo"></h3>
+      <p class="proceso__panel-texto" id="proceso-panel-texto"></p>
+    </div>
+  </div>
+</section>
+
+    <!-- ============ UBICACIÓN / CÓMO ENCONTRARNOS ============ -->
+    <section class="ubicacion" id="contacto">
+      <div class="contenedor">
+        <h2 class="seccion__titulo seccion__titulo--claro">Cómo encontrarnos</h2>
+
+        <div class="ubicacion__cuadricula">
+
+          <!-- Columna izquierda: texto -->
+          <div class="ubicacion__texto">
+            <address class="ubicacion__direccion">
+              Calle Ejemplo 123 (dirección ficticia)<br>
+              Ciudad Ejemplo, Provincia de Buenos Aires, Argentina
+            </address>
+
+            <p>La atención presencial es solo con turno previo.</p>
+
+            <!-- Datos de contacto -->
+            <ul class="ubicacion__datos">
+
+              <!-- Horario de atención -->
+              <li class="ubicacion__dato">
+                <img class="ubicacion__icono" src="Img/Img-redes-fother/icons8-globo-de-zona-horaria-50.png" alt="">
+                <span>Horario de atención: lunes a viernes de 9 a 20 hs</span>
+              </li>
+
+              <!-- Correo -->
+              <li class="ubicacion__dato">
+                <img class="ubicacion__icono" src="Img/Img-redes-fother/icons8-correo-24.png" alt="">
+                <a class="ubicacion__enlace" id="correo-contacto" href="mailto:contacto@example.com">contacto@example.com</a>
+              </li>
+
+              <!-- WhatsApp -->
+              <li class="ubicacion__dato">
+                <img class="ubicacion__icono" src="Img/Img-redes-fother/icons8-whatsapp-24.png" alt="">
+                <a class="ubicacion__enlace" href="https://wa.me/5491100000000" target="_blank" rel="noopener">+54 9 11 0000-0000</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Columna derecha: mapa -->
+          <div class="ubicacion__mapa">
+            <div class="ubicacion__mapa-marco ubicacion__mapa-marco--demo" role="img" aria-label="Mapa de ejemplo, no disponible en la versión de demostración">
+              <p>Mapa de ejemplo<br><small>La dirección de este sitio es ficticia.</small></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="contenedor pie__cuadricula">
+
+      <div class="pie__marca">
+        <a class="logotipo" href="#inicio">Gestoría Modelo</a>
+        <p>Gestiones y trámites para profesionales, empresas, particulares y municipios en Capital Federal y Provincia de Buenos Aires.</p>
+      </div>
+
+      <nav class="pie__columna" aria-label="Secciones del sitio">
+        <h3 class="pie__titulo">Sitio</h3>
+        <ul class="pie__lista">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#menu-servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <nav class="pie__columna" aria-label="Información útil">
+        <h3 class="pie__titulo">Información</h3>
+        <ul class="pie__lista">
+          <li><a href="preguntas.html">Preguntas frecuentes</a></li>
+          <li><a href="preguntas.html#pagos">Medios de pago</a></li>
+        </ul>
+      </nav>
+
+      <div class="pie__columna">
+        <h3 class="pie__titulo">Contacto</h3>
+        <ul class="pie__lista">
+          <li>Calle Ejemplo 123, Ciudad Ejemplo, Provincia de Buenos Aires (dirección ficticia)</li>
+          <li><a href="mailto:contacto@example.com">contacto@example.com</a></li>
+          <li><a href="https://wa.me/5491100000000" target="_blank" rel="noopener">WhatsApp +54 9 11 0000-0000</a></li>
+          <li>Lunes a viernes, 9 a 20 hs</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pie__base">
+      <p>© <span id="anio-actual">2026</span> Gestoría Modelo.</p>
+      <p class="aviso-demo">Sitio de demostración: los nombres, datos de contacto, opiniones y servicios son ficticios. Proyecto de práctica de Brandon Ventura. Íconos de <a href="https://icons8.com" target="_blank" rel="noopener">Icons8</a> y <a href="https://www.flaticon.com" target="_blank" rel="noopener">Flaticon</a>.</p>
+    </div>
+  </footer>
+
+  <a class="boton-whatsapp" href="https://wa.me/5491100000000?text=Hola,%20quisiera%20hacer%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+      <img class="boton-whatsapp__icono" src="Img/Img-redes-fother/icons8-whatsapp-24.png" alt="WhatsApp" decoding="async">
+  </a>
+
+  <!-- Fondo borroso y ventana con el detalle de cada servicio -->
+  <div class="servicio-fondo" id="servicio-fondo"></div>
+
+  <dialog class="servicio-modal" id="servicio-modal">
+    <button class="servicio-modal__cerrar" type="button" aria-label="Cerrar">&times;</button>
+    <img class="servicio-modal__imagen" id="servicio-modal-imagen" alt="">
+    <div class="servicio-modal__contenido" id="servicio-modal-contenido"></div>
+  </dialog>
+
+  <!-- Scripts -->
+  <script src="principal.js"></script>
+</body>
+</html>
